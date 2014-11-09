@@ -7,7 +7,14 @@
     "phaser": "~2.1.3"
   },
   "devDependencies": {
-    "grunt": "~0.4.5"
+    "grunt": "~0.4.5",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-watch": "~0.5.3",
+    "matchdep": "*",
+    "karma": "~0.12.24",
+    "grunt-karma": "~0.9.0",
+    "grunt-contrib-uglify": "~0.6.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,7 +23,10 @@
     "type": "git",
     "url": "git://github.com/hughgrigg/outpost.git"
   },
-  "author": ["Marc Jones", "Hugh Grigg"],
+  "author": [
+    "Marc Jones",
+    "Hugh Grigg"
+  ],
   "license": "BSD-2-Clause",
   "bugs": {
     "url": "http://redmine.hughgrigg.com/projects/outpost"

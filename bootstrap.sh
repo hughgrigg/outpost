@@ -9,7 +9,7 @@ rm /etc/nginx/sites-enabled/default
 echo """server {
     listen 80;
     server_name outpost.dev;
-    root /vagrant/app;
+    root /vagrant/deploy;
     index index.html;
 }""" > /etc/nginx/sites-available/outpost.dev
 
