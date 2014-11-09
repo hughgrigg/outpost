@@ -1,0 +1,24 @@
+{
+  "name": "Outpost",
+  "version": "0.0.0",
+  "description": "Some sort of space shooting demo game",
+  "main": "index.js",
+  "dependencies": {
+    "phaser": "~2.1.3"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/hughgrigg/outpost.git"
+  },
+  "author": ["Marc Jones", "Hugh Grigg"],
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "http://redmine.hughgrigg.com/projects/outpost"
+  }
+}
