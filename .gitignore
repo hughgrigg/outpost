@@ -33,3 +33,5 @@ node_modules
 # Deploy
 deploy/css
 deploy/js
+deploy/img
+tmp

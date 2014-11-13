@@ -34,20 +34,31 @@ module.exports = function(grunt) {
                     sourceMapName: 'deploy/js/outpost.map'
                 },
                 files: {
-                    'deploy/js/outpost.min.js': 'deploy/js/outpost.js'
+                    'deploy/js/op.min.js': 'deploy/js/outpost.js'
                 }
             }
         },
 
+        copy: {
+            assets: {
+                files: [
+                    {
+                        expand: true,
+                        src: ['assets/**'],
+                        dest: 'deploy/'}
+                ],
+            },
+        },
+
         watch: {
-            files: 'src/**/*.js',
-            tasks: ['jshint', 'concat', 'uglify', 'concat']
+            files: '**/*',
+            tasks: ['jshint', 'concat', 'uglify', 'copy']
         }
 
     });
 
     grunt.registerTask(
         'default',
-        ['jshint', 'concat', 'uglify', 'watch']
+        ['jshint', 'concat', 'uglify', 'copy', 'watch']
     );
 };
