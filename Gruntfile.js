@@ -6,7 +6,7 @@ module.exports = function(grunt) {
     grunt.initConfig({
 
         jshint: {
-            all: ['gruntfile.js', 'src/**/*.js', 'test/**/*.js']
+            all: ['gruntfile.js', 'src/**/*.js']
         },
 
         karma: {
@@ -51,10 +51,28 @@ module.exports = function(grunt) {
         },
 
         watch: {
-            files: '**/*',
-            tasks: ['jshint', 'concat', 'uglify', 'copy']
+            
+            jshintFiles : {
+                    files: ['gruntfile.js', 'src/**/*.js'],
+                    tasks: 'jshint'
+            },
+        
+            concatFiles: {
+                    files: ['node_modules/phaser/build/phaser.js',
+                            'src/**/*.js'],
+                    tasks: 'concat'
+            },
+        
+            uglifyFiles: {
+                    files: 'deploy/js/outpost.js',
+                    tasks: 'uglify'
+            },
+        
+            copyFiles: {
+                    files: 'assets/**',
+                    tasks: 'copy'
+            }
         }
-
     });
 
     grunt.registerTask(
