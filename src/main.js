@@ -5,40 +5,29 @@ var game = new Phaser.Game(
     "outpost",
     {
         preload: preload,
-        create: create
+        create: create,
+        update: update
     }
 );
 
-var this_text;
-var counter = 0;
-var image;
+var t0 = Date.now();
+var player;
 
 function preload() {
-    game.load.image("marc", "assets/img/marc.png");
+    game.load.image("playerSprite", "assets/img/protagonist.png");
 }
 
 function create() {
-    image = game.add.sprite(game.world.centerX, 0, "marc");
     
-    image.inputEnabled = true;
-    
-    image.anchor.set(0.5);
-
-    
-    this_text = game.add.text(0, 0, 'Try Left Clicking!', { fill: '#00ffff' });
-    
-    image.events.onInputDown.add(listener, this);
-    
-    game.input.addMoveCallback(move, this);
+    player = new Player(game,
+                        "playerSprite",
+                        400,
+                        300);
 
 }
 
-function move(pointer, x, y) {
-    image.x = x;
-    image.y = y;
-}
-
-function listener() {
-    counter++;
-    this_text.text = "You clicked " + counter + " times!";
+function update() {
+    var deltaT = Date.now() - t0;
+    t0 = Date.now();
+    player.update(deltaT);
 }
